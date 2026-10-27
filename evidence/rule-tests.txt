@@ -1,0 +1,18 @@
+✔ correct quick order scores 150; consecutive orders add bonus (1.153403ms)
+✔ wrong order subtracts 30, clears tray and resets streak (0.5985ms)
+✔ matching is order independent and duplicate quantities matter (0.163396ms)
+✔ slow service earns base points, not speed bonus (0.121773ms)
+✔ expired customers cost score and hearts and get removed (0.356385ms)
+✔ shift ends at 90 seconds; serving afterward cannot change score (0.97778ms)
+✔ three lost guests end shift before timer expires (0.129916ms)
+✔ pause freezes timers and blocks serving and selection (0.12612ms)
+✔ tray limited to three valid items, score cannot go negative (0.280131ms)
+✔ menu offers six different foods and beverages; difficulty increases (0.183095ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10.517331
