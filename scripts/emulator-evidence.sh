@@ -15,7 +15,7 @@ wait "$test_process"
 adb exec-out screencap -p > android-evidence/03-score.png
 wait "$recorder" || true
 adb pull /sdcard/coffee-track.mp4 android-evidence/coffee-track.mp4
-if ! rg -q 'PASS: real Android WebView' android-evidence/instrumentation.txt; then
+if ! grep -Fq 'PASS: real Android WebView' android-evidence/instrumentation.txt; then
   cat android-evidence/instrumentation.txt
   exit 1
 fi
