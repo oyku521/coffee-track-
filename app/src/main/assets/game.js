@@ -8,6 +8,9 @@ function toast(text){$('toast').textContent=text;}
 function saveBest(){if(shift.score>best){best=shift.score;try{localStorage.setItem('coffee-track-best',String(best));}catch{}}}
 function render(){
  $('score').textContent=shift.score.toLocaleString();$('time').textContent=Math.ceil(shift.remaining)+'s';$('best').textContent=best.toLocaleString();$('lives').textContent='♥ '.repeat(Math.max(0,shift.lives))+'♡ '.repeat(3-Math.max(0,shift.lives));
+ $('goal-progress').value=Math.min(1000,shift.score);
+ $('goal-detail').textContent=`${shift.score.toLocaleString()} / 1,000 points`;
+ $('goal-label').textContent=shift.score>=1000?'★ Café Star earned!':shift.score>=500?'Rising barista':'Rookie barista';
  $('combo').textContent=shift.streak>1?`${shift.streak} IN A ROW · +${Math.min(50,(shift.streak-1)*10)} STREAK BONUS`:'LET’S BREW SOMETHING';
  $('customers').innerHTML=shift.customers.map(c=>`<button class="customer ${shift.selected===c.id?'selected':''}" data-customer="${c.id}" aria-pressed="${shift.selected===c.id}" aria-label="${c.name}: ${c.order.map(id=>MENU.find(m=>m.id===id).name).join(', ')}"><div class="portrait">${c.face}</div><b>${c.name}</b><div class="order-items">${c.order.map(icon).join('')}</div><div class="patience"><i style="width:${Math.max(0,c.left/c.total*100)}%;background:${c.left/c.total<.3?'#bc5e36':'#71876c'}"></i></div></button>`).join('')+Array.from({length:3-shift.customers.length},()=>'<div class="empty-customer">Next guest<br>on their way…</div>').join('');
  $('tray').className='tray'+(shift.tray.length?'':' empty');$('tray').innerHTML=shift.tray.length?shift.tray.map((id,i)=>`<button data-remove="${i}" aria-label="Remove ${MENU.find(m=>m.id===id).name}">${icon(id)}</button>`).join(''):'Your delicious creations go here';
@@ -26,5 +29,5 @@ $('start').onclick=()=>{if(mode==='paused'){shift.paused=false;}else{shift=new S
 $('overlay').addEventListener('cancel',e=>{e.preventDefault();});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
 window.coffeeTrack={pause,getState:()=>shift};
-function frame(now){const dt=previous?(now-previous)/1000:0;previous=now;if(shift.running&&!shift.paused){const lost=shift.tick(dt);if(lost.length)toast('−50 · A guest left. Keep an eye on those timers!');if(!shift.running){saveBest();mode='finished';show(shift.lives<=0?'Time to regroup.':'That’s a wrap!',`You earned ${shift.score.toLocaleString()} points and served ${shift.served} happy guests. ${shift.missed} guests left. Best: ${best.toLocaleString()}. Ready for another shift?`,'Start a new shift');}render();}requestAnimationFrame(frame);}
+function frame(now){const dt=previous?(now-previous)/1000:0;previous=now;if(shift.running&&!shift.paused){const lost=shift.tick(dt);if(lost.length)toast('−50 · A guest left. Keep an eye on those timers!');if(!shift.running){saveBest();mode='finished';show(shift.lives<=0?'Time to regroup.':'That’s a wrap!',`${shift.score>=1000?'★ Café Star! ':''}You earned ${shift.score.toLocaleString()} points and served ${shift.served} happy guests. ${shift.missed} guests left. Best: ${best.toLocaleString()}. Ready for another shift?`,'Start a new shift');}render();}requestAnimationFrame(frame);}
 render();$('overlay').showModal();requestAnimationFrame(frame);

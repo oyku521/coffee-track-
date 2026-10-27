@@ -14,7 +14,7 @@ Tap a customer card. Add the exact items shown on the order to your tray, then t
 - Score never goes below zero. Three lost customers or 90 seconds ends the shift.
 - Best score is stored locally when device storage is available.
 
-The six menu items are coffee, tea, croissant, sandwich, cake and cookie. Eight customer appearances, a striped café awning, indoor plants, window, patience bars and serving tray establish the café setting. Orders become larger and arrive faster as more customers are served.
+The eight menu items are coffee, tea, croissant, sandwich, cake, cookie, soup and salad. A progress bar tracks the 1,000-point Café Star goal; it does not change scoring. Eight customer appearances, a striped café awning, indoor plants, window, patience bars and a serving tray that stays reachable on short screens establish the café setting. Orders become larger and arrive faster as more customers are served.
 
 ## Get the Android APK
 

@@ -27,6 +27,17 @@ const path = require('node:path');
  assert.equal(await page.locator('#best').textContent(),'150');
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
  assert.deepEqual(errors,[]);
+ for(const [width,height] of [[360,640],[393,650],[390,844]]) {
+  await page.setViewportSize({width,height});
+  await page.evaluate(()=>scrollTo(0,0));
+  const serve=await page.locator('#serve').boundingBox();
+  const lastFood=await page.locator('.food').last().boundingBox();
+  const station=await page.locator('.serving-station').boundingBox();
+  assert(serve.y>=0 && serve.y+serve.height<=height, `Serve clipped at ${width}x${height}`);
+  assert(lastFood.y+lastFood.height<=station.y+2, `Menu obscured at ${width}x${height}`);
+  assert.equal(await page.locator('.food').count(),8);
+ }
+
  console.log('PASS: start, exact order service (+150), pause, shift end, replay, high score and mobile width; no JavaScript errors.');
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1);});

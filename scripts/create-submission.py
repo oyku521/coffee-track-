@@ -14,13 +14,13 @@ d.add_paragraph('This draft is not ready for LMS submission until the fields abo
 d.add_heading('Game concept and controls',1)
 d.add_paragraph('Coffee Track is an English-language offline Android game set in a small café. During a 90-second shift, the player selects a customer, adds the exact ordered products to a tray and serves the order before the patience bar runs out. Three lost guests end the shift. Pause and replay are supported.')
 d.add_heading('Diversity of meals',1)
-d.add_paragraph('The menu includes coffee, tea, croissants, sandwiches, cake and cookies. Orders contain different combinations and quantities. Difficulty increases as successful service produces larger orders and faster arrivals.')
+d.add_paragraph('The menu includes coffee, tea, croissants, sandwiches, cake, cookies, soup and salad. Orders contain different combinations and quantities. Difficulty increases as successful service produces larger orders and faster arrivals.')
 d.add_heading('Points management',1)
 t=d.add_table(rows=1, cols=2);t.style='Light Shading Accent 1'
 t.rows[0].cells[0].text='Event';t.rows[0].cells[1].text='Points / consequence'
 for a,b in [('Correct order','+100'),('Fast service (at least half patience remains)','+50 bonus'),('Correct-order streak','+10 per additional order, up to +50'),('Wrong order','−30; streak resets'),('Guest runs out of patience','−50 and one heart; streak resets')]:
  c=t.add_row().cells;c[0].text=a;c[1].text=b
-d.add_paragraph('Score cannot fall below zero. A local best score rewards replay. Each service displays feedback explaining the outcome.')
+d.add_paragraph('Score cannot fall below zero. A local best score rewards replay. A visible 1,000-point goal awards the Café Star title without changing the scoring rules. Each service displays feedback explaining the outcome.')
 d.add_heading('Visual details and language',1)
 d.add_paragraph('The interface uses a forest-green and cream café palette, striped awning, plants, a window, different customer appearances, illustrated food symbols, patience bars and a serving tray. All game text and instructions are in English.')
 d.add_heading('Development previews — browser only',1)

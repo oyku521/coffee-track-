@@ -3,7 +3,8 @@
 const MENU = [
  {id:'coffee',name:'Coffee',icon:'☕'}, {id:'tea',name:'Tea',icon:'🍵'},
  {id:'croissant',name:'Croissant',icon:'🥐'}, {id:'sandwich',name:'Sandwich',icon:'🥪'},
- {id:'cake',name:'Cake',icon:'🍰'}, {id:'cookie',name:'Cookie',icon:'🍪'}
+ {id:'cake',name:'Cake',icon:'🍰'}, {id:'cookie',name:'Cookie',icon:'🍪'},
+ {id:'soup',name:'Soup',icon:'🍲'}, {id:'salad',name:'Salad',icon:'🥗'}
 ];
 const PEOPLE = [['Maya','👩🏽'],['Leo','👨🏻'],['Ava','👩🏼'],['Noah','👨🏾'],['Zoe','👩🏻'],['Omar','👨🏽'],['Ruby','👩🏾'],['Alex','🧑🏼']];
 class Shift {
