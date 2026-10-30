@@ -1,6 +1,6 @@
-# Coffee Track ☕
+# Sweet Bakery 🧁
 
-An offline Android café game in English. Match customer orders, serve quickly and build a streak during a 90-second shift.
+An offline Android bakery game in English. Match customer orders, serve quickly and build a streak during a 90-second shift.
 
 ## Play
 
@@ -14,7 +14,7 @@ Tap a customer card. Add the exact items shown on the order to your tray, then t
 - Score never goes below zero. Three lost customers or 90 seconds ends the shift.
 - Best score is stored locally when device storage is available.
 
-The eight menu items are coffee, tea, croissant, sandwich, cake, cookie, soup and salad. A progress bar tracks the 1,000-point Café Star goal; it does not change scoring. Eight customer appearances, a striped café awning, indoor plants, window, patience bars and a serving tray that stays reachable on short screens establish the café setting. Orders become larger and arrive faster as more customers are served.
+The eight menu items are cupcake, donut, croissant, bread, cake, cookie, pie and pretzel. A progress bar tracks the 1,000-point Star Baker goal; it does not change scoring. Eight customer appearances, a striped pink awning, pastry shelves, a warm oven, patience bars and a serving tray that stays reachable on short screens establish the bakery setting. Orders become larger and arrive faster as more customers are served.
 
 ## Get the Android APK
 
@@ -46,3 +46,7 @@ Browser smoke test: install Playwright locally, start a static server on port 41
 5. Submit the completed Word file to LMS.
 
 `evidence/` contains mobile-sized **browser** screenshots from development; these are not Android emulator screenshots. Actual Android execution and GitHub green-check evidence must be obtained from a successful workflow run. `submission/Coffee-Track-Submission-DRAFT.docx` is an incomplete draft until the required links and genuine evidence are inserted.
+
+## Sweet Bakery edition
+
+The Android display name and icon now identify Sweet Bakery. Best scores are stored separately from Coffee Track. The existing Android package ID, asset origin, internal JavaScript integration and GitHub workflow/artifact names remain compatible. Older Coffee Track screenshots and the Word draft are historical evidence; regenerate screenshots, emulator recordings and the submission document for this edition before submitting.

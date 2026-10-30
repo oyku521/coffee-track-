@@ -1,10 +1,10 @@
 (function (root) {
 'use strict';
 const MENU = [
- {id:'coffee',name:'Coffee',icon:'☕'}, {id:'tea',name:'Tea',icon:'🍵'},
- {id:'croissant',name:'Croissant',icon:'🥐'}, {id:'sandwich',name:'Sandwich',icon:'🥪'},
+ {id:'cupcake',name:'Cupcake',icon:'🧁'}, {id:'donut',name:'Donut',icon:'🍩'},
+ {id:'croissant',name:'Croissant',icon:'🥐'}, {id:'bread',name:'Bread',icon:'🍞'},
  {id:'cake',name:'Cake',icon:'🍰'}, {id:'cookie',name:'Cookie',icon:'🍪'},
- {id:'soup',name:'Soup',icon:'🍲'}, {id:'salad',name:'Salad',icon:'🥗'}
+ {id:'pie',name:'Pie',icon:'🥧'}, {id:'pretzel',name:'Pretzel',icon:'🥨'}
 ];
 const PEOPLE = [['Maya','👩🏽'],['Leo','👨🏻'],['Ava','👩🏼'],['Noah','👨🏾'],['Zoe','👩🏻'],['Omar','👨🏽'],['Ruby','👩🏾'],['Alex','🧑🏼']];
 class Shift {
